@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MXSZN – Account</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="jersey" viewBox="0 0 100 100">
+    <path d="M30 10H40Q50 22 60 10H70L92 24 82 42 74 38V90H26V38L18 42 8 24Z" style="fill:var(--c1)"/>
+    <path d="M40 10Q50 22 60 10H64Q50 30 36 10Z" style="fill:var(--c2)"/>
+    <path d="M8 24 18 42 23 39.5 13 21.5ZM92 24 82 42 77 39.5 87 21.5Z" style="fill:var(--c2)"/>
+    <rect x="26" y="82" width="48" height="4" style="fill:var(--c2)"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="bar">
+    <a class="brand" href="index.html">MXSZN</a>
+    <button id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav">
+      <a href="index.html#store">Store</a>
+      <a href="index.html#delivery">Delivery</a>
+      <a href="index.html#contact">Contact Us</a>
+      <a href="index.html#community">Community</a>
+    </nav>
+    <div class="icons">
+      <button class="ib" id="searchBtn" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <a class="ib" href="account.html" aria-label="Account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></a>
+      <a class="ib" href="favorites.html" aria-label="Favorites"><svg viewBox="0 0 24 24"><path d="M12 20s-8-4.7-8-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5C20 15.300 12 20 12 20Z"/></svg><span id="favCount"></span></a>
+      <a class="ib" href="cart.html" aria-label="Cart"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span id="count" data-n="0"></span></a>
+    </div>
+  </div>
+<form id="searchBar" class="searchbar" role="search" hidden><input id="q" type="search" placeholder="Search jerseys, e.g. Dallas or sale" aria-label="Search jerseys" autocomplete="off"></form>
+</header>
+
+<main>
+<section id="accountPage">
+  <div id="authBox" class="narrow" hidden>
+    <div class="tabs"><button class="on" data-tab="login">Log in</button><button data-tab="register">Create account</button></div>
+    <form id="loginForm" class="form">
+      <label for="l-email">Email</label><input id="l-email" name="email" type="email" autocomplete="email" required>
+      <label for="l-pw">Password</label><input id="l-pw" name="password" type="password" autocomplete="current-password" required>
+      <p class="err" role="alert"></p><button class="btn">Log in</button>
+    </form>
+    <form id="registerForm" class="form" hidden>
+      <label for="r-name">Full name</label><input id="r-name" name="name" autocomplete="name" required>
+      <label for="r-email">Email</label><input id="r-email" name="email" type="email" autocomplete="email" required>
+      <label for="r-phone">Phone number</label><input id="r-phone" name="phone" type="tel" autocomplete="tel">
+      <label for="r-pw">Password (at least 8 characters)</label><input id="r-pw" name="password" type="password" autocomplete="new-password" minlength="8" required>
+      <p class="err" role="alert"></p><button class="btn">Create account</button>
+    </form>
+  </div>
+  <div id="ordersBox" hidden>
+    <div class="head"><h2 id="hello"></h2><button class="btn line" id="logout">Log out</button></div>
+    <h3>My orders</h3><div id="orders"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span class="brand">MXSZN</span>
+  <a href="#">Return Policy</a><a href="#">Cookie Settings</a><a href="#">Report Abuse</a>
+</footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
